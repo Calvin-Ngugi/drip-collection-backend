@@ -1,4 +1,4 @@
-import express, { response } from "express";
+import express from "express";
 import mysql from "mysql";
 import cors from "cors";
 import jwt from "jsonwebtoken";
@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: [BASE_URL],
+    origin: [process.env.BASE_URL],
     methods: ["POST", "GET"],
     credentials: true,
   })
